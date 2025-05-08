@@ -1,33 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>QR 자동 전송</title>
-  <script>
-    window.onload = function () {
-      const fullPath = window.location.pathname; // 예: /scan/result/GD?A=0034
-      const match = fullPath.match(/GD\?A=\d+/); // 정규식으로 GD?A=숫자 추출
-
-      if (!match) {
-        document.body.innerHTML = "<p>유효한 데이터가 없습니다.</p>";
-        return;
-      }
-
-      const extractedData = match[0]; // "GD?A=0034"
-      const scriptURL = "https://script.google.com/a/macros/taean-hs.es.kr/s/AKfycbzXir3IIx0SemD44nz2886bWd4NPnPhtjFyIIDxSU3ZErtU1b1BBSMQgWLFyIR9QgTE/exec?data=" + encodeURIComponent(extractedData);
-
-      fetch(scriptURL)
-        .then(res => res.text())
-        .then(msg => {
-          document.body.innerHTML = `<h2 style='font-size:24px;'>${msg}</h2>`;
-        })
-        .catch(err => {
-          document.body.innerHTML = "<p>오류 발생: " + err + "</p>";
-        });
-    };
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <p>QR 데이터 전송 중...</p>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto py-20 text-center">
+        <h1 class="text-4xl font-bold mb-4">🚀 Welcome to My GitHub Page!</h1>
+        <p class="text-lg mb-8">This is a simple GitHub Pages site. Customize it as you like.</p>
+        <a href="https://github.com/your-username" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+            Visit My GitHub
+        </a>
+    </div>
 </body>
 </html>
